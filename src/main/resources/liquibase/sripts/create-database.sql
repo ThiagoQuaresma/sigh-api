@@ -1,0 +1,2 @@
+CREATE DATABASE sisgac;
+ALTER DATABASE sisgac OWNER TO sisgac;

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog 
+                        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd"
+    logicalFilePath="changelog.xml">
+
+    <changeSet author="sisgac" id="clearCheckSums" runAlways="true" context="dev">
+        <sql>update databasechangelog SET md5sum = NULL</sql>
+    </changeSet>
+
+    <changeSet author="sisgac" id="0.0.tag">
+        <tagDatabase tag="0.0" />
+    </changeSet>
+
+    <!-- versao 1.0 -->
+    <include file="liquibase/changesets/01.00/01.00.01-create-schema-core.sql"/>
+
+
+    <!-- dev -->
+    <include file="liquibase/changesets/dev/01.00.51-insert-clientes.sql"/>
+    
+    <!-- sandbox -->
+    <!-- <include file="liquibase/changesets/sandbox/01.00.51-insert-test-data.sql"/>     -->
+
+</databaseChangeLog>
