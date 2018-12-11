@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -17,13 +18,13 @@ import br.com.thiagoquaresma.sigh.repository.model.Medico;
 
 @CrossOrigin(origins="*")
 @RestController
-@RequestMapping(value="/medico/")
+@RequestMapping(value="/medico")
 public class MedicoController {
 	
 	@Autowired
 	private MedicoRepository medicoRepository;
 	
-	@GetMapping
+	@GetMapping("/")
 	public List<Medico> findAll(){
 	
 	List<Medico> medicos = medicoRepository.findAll();
@@ -39,13 +40,30 @@ public class MedicoController {
 		return;
 	}
 	
-	@DeleteMapping
+	@PutMapping
+	private void updateMedico(@RequestBody Medico medico) {
+		
+		medicoRepository.save(medico);
+		
+		return;
+	}
+	
+	@DeleteMapping("/{id}")
 	private void deleteMedico(@PathVariable Long id) {
 		
 		medicoRepository.delete(id);
 
 		return;
 	}
+	
+	@GetMapping("/{id}")
+	public Medico getMedico(@PathVariable Long id) {
+		
+		return medicoRepository.getById(id);
+		
+		
+	}
+
 }
 	
 	

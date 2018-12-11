@@ -7,6 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 import org.hibernate.annotations.DynamicInsert;
 import org.hibernate.annotations.DynamicUpdate;
@@ -14,33 +15,33 @@ import org.hibernate.annotations.DynamicUpdate;
 @Entity
 @DynamicInsert
 @DynamicUpdate
-
+@Table(schema = "public", name = "medico")
 public class Medico {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "id")
+	@Column(name = "idmedico")
 	private Long id;
 	
-	@Column(name = "name")
+	@Column(name = "nome_med")
 	private String name;
 	
-	@Column(name = "email")
+	@Column(name = "email_med")
 	private String email;
 	
 	@Column(name = "crm")
 	private Long crm;
 
-	@Column(name = "cpf")
+	@Column(name = "cpf_med")
 	private Long cpf;
 	
-	@Column(name = "rg")
+	@Column(name = "rg_med")
 	private Long rg;
 	
-	@Column(name = "nasci")
+	@Column(name = "data_nasci_med")
 	private Date nasci;
 	
-	@Column(name = "sexo")
+	@Column(name = "sexo_med")
 	private String sexo;
 	
 	public Long getId() {

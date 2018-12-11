@@ -9,16 +9,25 @@
         <sql>update databasechangelog SET md5sum = NULL</sql>
     </changeSet>
 
-    <changeSet author="sigh" id="0.0.tag">
+    <changeSet author="postgres" id="0.0.tag">
         <tagDatabase tag="0.0" />
     </changeSet>
-
+    
     <!-- versao 1.0 -->
-    <include file="liquibase/changesets/01.00/01.00.01-create-schema-core.sql"/>
-
+<!--     <include file="liquibase/changesets/01.00/01.00.01-create-schema-core.sql"/> -->
+	<include file="liquibase/scripts/create-database.sql"/>
 
     <!-- dev -->
     <include file="liquibase/changesets/dev/01.00.51-insert-medico.sql"/>
+    <include file="liquibase/changesets/dev/01.00.51-insert-paciente.sql"/>
+    <include file="liquibase/changesets/dev/01.00.51-insert-ufpaciente.sql"/>
+    <include file="liquibase/changesets/dev/01.00.51-insert-ufmedico.sql"/>
+    <include file="liquibase/changesets/dev/01.00.51-insert-historico.sql"/>
+    <include file="liquibase/changesets/dev/01.00.51-insert-especialidade.sql"/>
+    <include file="liquibase/changesets/dev/01.00.51-insert-consulta.sql"/>
+    <include file="liquibase/changesets/dev/01.00.51-insert-agenda.sql"/>
+    <include file="liquibase/changesets/dev/01.00.51-insert-atendimento.sql"/>
+    
     
     <!-- sandbox -->
     <!-- <include file="liquibase/changesets/sandbox/01.00.51-insert-test-data.sql"/>     -->

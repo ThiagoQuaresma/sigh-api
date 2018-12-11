@@ -6,31 +6,29 @@ public class MedicoService {
 
 	private Medico medico;
 	
+	public Medico getMedico() {
+		return medico;
+	}
+//	private void findAll() {
+//		
+//
+//	}
 //	private void addMedico() {
-//		// TODO Auto-generated method stub
+//		
 //
 //	}
 //	
 //	private void updateMedico() {
-//		// TODO Auto-generated method stub
+//		
 //
 //	}
 //	
 //	private void deleteMedico() {
-//		// TODO Auto-generated method stub
-//
-//	}
-//	
-//	private void findMedico() {
-//		// TODO Auto-generated method stub
+//		
 //
 //	}
 
-	public Medico getMedico() {
-		return medico;
-	}
-
-	public void setMedico(Medico medico) {
-		this.medico = medico;
-	}
+//	public void setMedico(Medico medico) {
+//		this.medico = medico;
+//	}
 }
